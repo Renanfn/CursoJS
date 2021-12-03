@@ -15,8 +15,8 @@
     </div>
     <script>
         function processar() {
-            var p = window.document.querySelector('input#txtcoutry')
-            nac.innerHTML = `<p>O País que você nasceu é: <strong>${p}</strong></p>`
+            var pais = window.document.querySelector('input#txtcoutry').value.toUpperCase()
+            nac.innerHTML = `<p>O País que você nasceu é: <strong>${pais}</strong></p>`
         }
     </script>
 </body>
