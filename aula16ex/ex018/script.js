@@ -1,10 +1,10 @@
 let num = document.querySelector('input#fnum')
-let lista = document.querySelector('input#flista')
-let res =document.querySelector('input#res')
+let lista = document.querySelector('select#flista')
+let res =document.querySelector('div#res')
 let valores = []
 
 function isNumero(n) {
-    if(Number(n) >= 1 && Number(n) <=100) {
+    if(Number(n) >= 1 && Number(n) <= 100) {
         return true
     } else {
         return false
@@ -19,10 +19,13 @@ function inLista(n, l) {
     }
 }
 
-function adicionar () {
+function adicionar() {
     if(isNumero(num.value) && !inLista(num.value, valores)) {
-
+        valores.push(Number(num.value))
+        let item = document.createElement('option')
+        item.text = `Valor ${num.value} adicionado.`
+        lista.appendChild(item)
     } else {
-    window.alert('Valor inválido ou já encontrado na lista.')
+        window.alert('Valor inválido ou já encontrado na lista.')
     }
 }
